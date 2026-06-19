@@ -20,7 +20,7 @@
 
         <!-- JBoss dependency versions -->
         <version.wildfly.maven.plugin>5.1.5.Final</version.wildfly.maven.plugin>
-        <version.wildfly.bom>39.0.1.Final</version.wildfly.bom>
+        <version.wildfly.bom>40.0.1.Final</version.wildfly.bom>
 
         <!--Use JUnit 5 here - the WildFly bom still brings 4.x -->
         <version.junit5>6.0.2</version.junit5>
@@ -128,6 +128,45 @@
 
     <dependencies>
 
+        <dependency>
+            <groupId>jakarta.persistence</groupId>
+            <artifactId>jakarta.persistence-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>jakarta.transaction</groupId>
+            <artifactId>jakarta.transaction-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>jakarta.validation</groupId>
+            <artifactId>jakarta.validation-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>jakarta.data</groupId>
+            <artifactId>jakarta.data-api</artifactId>
+            <version>1.0.1</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- Source: https://mvnrepository.com/artifact/org.hibernate.orm/hibernate-processor -->
+        <dependency>
+            <groupId>org.hibernate.orm</groupId>
+            <artifactId>hibernate-processor</artifactId>
+            <version>7.4.1.Final</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- Source: https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.46</version>
+            <scope>provided</scope>
+        </dependency>
+
+
         <!-- Import the CDI API, we use provided scope as the API is included in WildFly -->
         <dependency>
             <groupId>jakarta.enterprise</groupId>
@@ -183,6 +222,7 @@
         <finalName>ROOT</finalName>
 
         <plugins>
+
             <!--Configuration of the maven-compiler-plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

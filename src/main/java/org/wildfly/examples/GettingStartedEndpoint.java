@@ -5,21 +5,26 @@ import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.PathParam;
 import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.QueryParam;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 
-@Path("/")
+@Path("/books")
 public class GettingStartedEndpoint {
 
     @Inject
-    private GettingStartedService service;
+    Repo repo;
 
     @GET
-    @Path("/{name}")
-    @Produces(MediaType.TEXT_PLAIN)
-    public Response sayHello(final @PathParam("name") String name) {
-        String response = service.hello(name);
+    @Path("/new")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response newBook() {
 
-        return Response.ok(response).build();
+        Book b = new Book();
+        b.setAuthor("yousuf");
+        b.setBookName("my book");
+        repo.save(b);
+
+        return Response.ok(b).build();
     }
 }

@@ -57,3 +57,9 @@
 ### Change ROOT-CONTEXT
 - in pom.xml if `<finalName>ROOT</finalName>` then will deploy to `/` Root Context
 - change to `<finalName>app1<finalName>` will deploy to `/app1` Root Context
+
+### Deploying DevCode to Domain Server on Local Machine
+- still not sure how to do it through CLI
+- in intellij : 
+  - `war exploded` is hot swappable like each restart will deploy new one and delete after intellij is stopped
+  - `war` will stay there even when intellij is stopped so can be used to deploy app basically

@@ -54,3 +54,6 @@
 ```
 3. Now can use `@Repository` wuth `CrudRepository`
 
+### Change ROOT-CONTEXT
+- in pom.xml if `<finalName>ROOT</finalName>` then will deploy to `/` Root Context
+- change to `<finalName>app1<finalName>` will deploy to `/app1` Root Context
